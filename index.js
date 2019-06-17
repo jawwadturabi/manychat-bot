@@ -1,8 +1,8 @@
-var rq = require('request');
+// var rq = require('request');
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express().use(bodyParser.json());
-const baseUrl = "https://usil.instructure.com/api/v1/"
+// const baseUrl = "https://usil.instructure.com/api/v1/"
 
 app.get("/webhook", (request, response) => {
     var intent = request.params
@@ -28,6 +28,9 @@ app.get("/webhook", (request, response) => {
         }
     })
     
+})
+app.listen(process.env.Port||4000,()=>{
+    console.log("server is running")
 })
 // var us_Id = request.params.usId
     // var courseId = request.params.courseId
