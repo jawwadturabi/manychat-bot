@@ -39,7 +39,7 @@ function handleEvent(event) {
   const echo = { type: 'text', text: "Hi I am your hotel booking agent" };
 
   // use reply API
-  return client.broadcast(event.replyToken, echo);
+  return client.pushMessage(event.source.userId, echo);
 }
 
 // listen on port
