@@ -43,7 +43,7 @@ function handleEvent(event) {
       "items": [
         {
           "type": "action", // ③
-          "imageUrl": "https://example.com/sushi.png",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlLUvvJQyJmlnd1MrLaynsylBoA3rs1caWilr69Re-4nxSog0b",
           "action": {
             "type": "message",
             "label": "Sushi",
