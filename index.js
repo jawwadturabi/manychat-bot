@@ -52,10 +52,10 @@ function handleEvent(event) {
         },
         {
           "type": "action",
-          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJJdQBSLTXzJ5dVwVFV8sSOLyvgm93q84JPG4tpCx_jOlD3PGE",
+          "imageUrl": "https://example.com/tempura.png",
           "action": {
             "type": "message",
-            "label": "😁",
+            "label": "Tempura",
             "text": "Tempura"
           }
         },
@@ -71,7 +71,7 @@ function handleEvent(event) {
   };
 
   // use reply API
-  return client.replyMessage(event.source.userId, echo);
+  return client.pushMessage(event.source.userId, echo);
 }
 
 // listen on port
