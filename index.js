@@ -55,7 +55,7 @@ function handleEvent(event) {
           "imageUrl": "https://example.com/tempura.png",
           "action": {
             "type": "message",
-            "label": "Tempura",
+            "label": "./Screenshot from 2019-09-08 20-33-13.png",
             "text": "Tempura"
           }
         },
@@ -71,7 +71,7 @@ function handleEvent(event) {
   };
 
   // use reply API
-  return client.pushMessage(event.source.userId, echo);
+  return client.replyMessage(event.source.userId, echo);
 }
 
 // listen on port
