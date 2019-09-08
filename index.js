@@ -52,10 +52,10 @@ function handleEvent(event) {
         },
         {
           "type": "action",
-          "imageUrl": "https://example.com/tempura.png",
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJJdQBSLTXzJ5dVwVFV8sSOLyvgm93q84JPG4tpCx_jOlD3PGE",
           "action": {
             "type": "message",
-            "label": "./Screenshot from 2019-09-08 20-33-13.png",
+            "label": "😁",
             "text": "Tempura"
           }
         },
