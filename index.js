@@ -71,7 +71,7 @@ function handleEvent(event) {
   };
 
   // use reply API
-  return client.pushMessage(event.source.userId, echo);
+  return client.replyMessage(event.source.userId, echo);
 }
 
 // listen on port
