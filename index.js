@@ -36,10 +36,10 @@ function handleEvent(event) {
   }
 
   // create a echoing text message
-  const echo = { type: 'text', text: event.message.text };
+  const echo = { type: 'text', text: "Hi I am your hotel booking agent" };
 
   // use reply API
-  return client.pushMessage(event.replyToken, echo);
+  return client.broadcast(event.replyToken, echo);
 }
 
 // listen on port
