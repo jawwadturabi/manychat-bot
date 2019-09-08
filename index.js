@@ -28,6 +28,13 @@ app.post('/callback', line.middleware(config), (req, res) => {
     });
 });
 
+const replyText = (token, texts) => {
+  texts = Array.isArray(texts) ? texts : [texts];
+  return client.replyMessage(
+    token,
+    texts.map((text) => ({ type: 'text', text }))
+  );
+};
 // event handler
 function handleEvent(event) {
   if (event.replyToken && event.replyToken.match(/^(.)\1*$/)) {
@@ -35,10 +42,12 @@ function handleEvent(event) {
   }
   switch (event.type) {
     case 'join':
-      return client.replyMessage(event.replyToken, `Joined ${event.source.type}`);
+      return replyText(event.replyToken, `Joined ${event.source.type}`);
+    // return client.replyMessage(event.replyToken, `Joined ${event.source.type}`);
     // create a echoing replyMessage message
     default:
-      return client.replyMessage(event.replyToken, 'Got followed event');
+      return replyText(event.replyToken, 'Got followed event');
+    // return client.replyMessage(event.replyToken, 'Got followed event');
 
     // use reply API
     // return client.replyMessage(event.source.userId, echo);
