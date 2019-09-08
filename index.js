@@ -35,10 +35,10 @@ function handleEvent(event) {
   }
   switch (event.type) {
     case 'join':
-      return client.replyText(event.replyToken, `Joined ${event.source.type}`);
-    // create a echoing text message
+      return client.replyMessage(event.replyToken, `Joined ${event.source.type}`);
+    // create a echoing replyMessage message
     default:
-      return client.replyText(event.replyToken, 'Got followed event');
+      return client.replyMessage(event.replyToken, 'Got followed event');
 
     // use reply API
     // return client.replyMessage(event.source.userId, echo);
