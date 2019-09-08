@@ -30,9 +30,8 @@ app.post('/callback', line.middleware(config), (req, res) => {
 
 // event handler
 function handleEvent(event) {
-  if (event.type !== 'message' || event.message.type !== 'text') {
-    // ignore non-text-message event
-    return Promise.resolve(null);
+  if (event.replyToken && event.replyToken.match(/^(.)\1*$/)) {
+    return console.log("Test hook recieved: " + JSON.stringify(event.message));
   }
   switch (event.type) {
     case 'join':
@@ -44,9 +43,9 @@ function handleEvent(event) {
     // use reply API
     // return client.replyMessage(event.source.userId, echo);
   }
-
-  // listen on port
-  const port = process.env.PORT || 3000;
-  app.listen(port, () => {
-    console.log(`listening on ${port}`);
-  });
+}
+// listen on port
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`listening on ${port}`);
+});
