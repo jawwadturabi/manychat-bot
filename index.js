@@ -34,48 +34,19 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
+  switch (event.type) {
+    case 'join':
+      return replyText(event.replyToken, `Joined ${event.source.type}`);
+    // create a echoing text message
+    default:
+      return replyText(event.replyToken, 'Got followed event');
 
-  // create a echoing text message
-  const echo = {
-    "type": "text", // ①
-    "text": "Select your favorite food category or send me your location!",
-    "quickReply": { // ②
-      "items": [
-        {
-          "type": "action", // ③
-          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlLUvvJQyJmlnd1MrLaynsylBoA3rs1caWilr69Re-4nxSog0b",
-          "action": {
-            "type": "message",
-            "label": "Sushi",
-            "text": "Sushi"
-          }
-        },
-        {
-          "type": "action",
-          "imageUrl": "https://example.com/tempura.png",
-          "action": {
-            "type": "message",
-            "label": "Tempura",
-            "text": "Tempura"
-          }
-        },
-        {
-          "type": "action", // ④
-          "action": {
-            "type": "location",
-            "label": "Send location"
-          }
-        }
-      ]
-    }
-  };
+    // use reply API
+    // return client.replyMessage(event.source.userId, echo);
+  }
 
-  // use reply API
-  return client.replyMessage(event.source.userId, echo);
-}
-
-// listen on port
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`listening on ${port}`);
-});
+  // listen on port
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`listening on ${port}`);
+  });
