@@ -73,6 +73,7 @@ function handleEvent(event) {
     // return client.replyMessage(event.replyToken, 'Got followed event');
     case 'message':
       const message = event.message;
+      console.log("msg type: ", message.type)
       switch (message.type) {
         case 'text':
           return handleText(message, event.replyToken, event.source);
@@ -82,6 +83,7 @@ function handleEvent(event) {
 }
 
 function handleText(message, replyToken, source) {
+  console.log("text is :", message.text)
   switch (message.text) {
     case 'Yes':
       return client.replyMessage(replyToken, {
