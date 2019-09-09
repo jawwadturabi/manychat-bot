@@ -120,7 +120,9 @@ function handleText(message, replyToken, source) {
       })
     case 'No!':
       return replyText(replyToken, "No problem come again when you planned for booking!");
-    case 'Economy' || 'Standard' || 'VIP':
+    case 'Economy':
+    case 'Standard':
+    case 'VIP':
       return client.replyMessage(replyToken, {
         type: "text",
         text: "Please tell me number of rooms",
@@ -139,7 +141,7 @@ function handleText(message, replyToken, source) {
               "action": {
                 "type": "message",
                 "label": "2",
-                "text": "2 room"
+                "text": "two rooms"
               }
             },
             {
@@ -147,87 +149,87 @@ function handleText(message, replyToken, source) {
               "action": {
                 "type": "message",
                 "label": "3",
-                "text": "3"
+                "text": "three rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "4",
+                "text": "four rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "5",
+                "text": "five rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "6",
+                "text": "six rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "7",
+                "text": "seven rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "8",
+                "text": "eight rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "9",
+                "text": "nine rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "10",
+                "text": "ten rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "11",
+                "text": "eleven rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "12",
+                "text": "twelve rooms"
               }
             },
             {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "3",
-                "text": "3"
+                "label": "13",
+                "text": "Thirteen rooms"
               }
             }
           ]
