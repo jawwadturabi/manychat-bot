@@ -72,46 +72,50 @@ function handleEvent(event) {
       });
     // return client.replyMessage(event.replyToken, 'Got followed event');
     case 'message':
-      if (event.message.type == 'text') {
-        if (event.message.text == 'Yes') {
-          return client.replyMessage(event.replyToken, {
-            type: "text",
-            text: "Please select type of room",
-            "quickReply": {
-              "items": [
-                {
-                  "type": "action",
-                  "action": {
-                    "type": "message",
-                    "label": "Economy",
-                    "text": "Economy"
-                  }
-                },
-                {
-                  "type": "action",
-                  "action": {
-                    "type": "message",
-                    "label": "Standard",
-                    "text": "Standard"
-                  }
-                },
-                {
-                  "type": "action",
-                  "action": {
-                    "type": "message",
-                    "label": "VIP",
-                    "text": "VIP"
-                  }
-                }
-              ]
-            }
-          })
-        }
-        else if (event.message.text == 'No') {
-          return client.replyMessage(event.source.userId, 'OK, Thanks for your engaging with me bye bye');
-        }
-        // use reply API
+      const message = event.message;
+      switch (message.type) {
+        case 'text':
+          return handleText(message, event.replyToken, event.source);
+        default:
       }
+  }
+}
+
+function handleText(message, replyToken, source) {
+  switch (message.text) {
+    case 'Yes':
+      return client.replyMessage(event.replyToken, {
+        type: "text",
+        text: "Please select type of room",
+        "quickReply": {
+          "items": [
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "Economy",
+                "text": "Economy"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "Standard",
+                "text": "Standard"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "VIP",
+                "text": "VIP"
+              }
+            }
+          ]
+        }
+      })
   }
 }
 // listen on port

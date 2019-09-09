@@ -2,12 +2,12 @@
   "name": "kitchensink",
   "version": "0.0.0",
   "description": "A kitchen-sink LINE bot example",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node test.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "@line/bot-sdk": "^6.8.2",
+    "@line/bot-sdk": "../../",
     "express": "^4.16.2",
     "ngrok": "^2.3.0"
   }
