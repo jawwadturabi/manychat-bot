@@ -21,7 +21,7 @@ const app = express();
 app.post('/callback', line.middleware(config), (req, res) => {
   Promise
     .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
+    .then((result) => res.json("result is ", result))
     .catch((err) => {
       console.error(err);
       res.status(500).end();
@@ -58,7 +58,7 @@ function handleEvent(event) {
     // return client.replyMessage(event.replyToken, `Joined ${event.source.type}`);
     // create a echoing replyMessage message
     case 'follow':
-      return replyText(event.replyToken, {
+      return replyMessage(event.replyToken, {
         type: 'template',
         altText: 'Confirm alt text',
         template: {
