@@ -85,7 +85,7 @@ function handleEvent(event) {
 function handleText(message, replyToken, source) {
   console.log("text is :", message.text)
   switch (message.text) {
-    case 'Yes':
+    case 'Yes!':
       return client.replyMessage(replyToken, {
         type: "text",
         text: "Please select type of room",
