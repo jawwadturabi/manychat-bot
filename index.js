@@ -58,7 +58,7 @@ function handleEvent(event) {
     // return client.replyMessage(event.replyToken, `Joined ${event.source.type}`);
     // create a echoing replyMessage message
     case 'follow':
-      return replyMessage(event.replyToken, {
+      return client.replyMessage(event.replyToken, {
         type: 'template',
         altText: 'Confirm alt text',
         template: {
@@ -84,7 +84,7 @@ function handleEvent(event) {
 function handleText(message, replyToken, source) {
   switch (message.text) {
     case 'Yes':
-      return client.replyMessage(event.replyToken, {
+      return client.replyMessage(replyToken, {
         type: "text",
         text: "Please select type of room",
         "quickReply": {
