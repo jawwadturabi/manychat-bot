@@ -229,14 +229,6 @@ function handleText(message, replyToken, source) {
                 "label": "3",
                 "text": "3"
               }
-            },
-            {
-              "type": "action",
-              "action": {
-                "type": "message",
-                "label": "3",
-                "text": "3"
-              }
             }
           ]
         }
