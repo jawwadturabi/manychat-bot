@@ -114,7 +114,7 @@ function handleEvent(event) {
 
 function handleText(message, replyToken, source) {
     const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
-
+    console.log("type is ", message.text)
     switch (message.text) {
         case 'profile':
             if (source.userId) {
