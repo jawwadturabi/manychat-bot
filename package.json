@@ -7,7 +7,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@line/bot-sdk": "../../",
     "express": "^4.16.2",
     "ngrok": "^2.3.0"
   }
