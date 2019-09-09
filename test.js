@@ -427,16 +427,6 @@ function handleSticker(message, replyToken) {
 // listen on port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    if (baseURL) {
-        console.log(`listening on ${baseURL}:${port}/callback`);
-    } else {
-        console.log("It seems that BASE_URL is not set. Connecting to ngrok...")
-        ngrok.connect(port, (err, url) => {
-            if (err) throw err;
-
-            baseURL = url;
-            console.log(`listening on ${baseURL}/callback`);
-        });
-    }
+    console.log("server is running " + port)
 });
 
