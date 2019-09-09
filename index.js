@@ -40,6 +40,7 @@ function handleEvent(event) {
   if (event.replyToken && event.replyToken.match(/^(.)\1*$/)) {
     return console.log("Test hook recieved: " + JSON.stringify(event.message));
   }
+  console.log("event is ", event.type)
   switch (event.type) {
     case 'join':
       return replyText(event.replyToken, `Joined ${event.source.type}`);
