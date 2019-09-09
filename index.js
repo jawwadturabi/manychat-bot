@@ -119,7 +119,7 @@ function handleText(message, replyToken, source) {
         }
       })
     case 'No!':
-      return client.replyMessage(replyToken, "No problem come again when you planned for booking!");
+      return replyText(replyToken, "No problem come again when you planned for booking!");
     case 'Economy' || 'Standard' || 'VIP':
       return client.replyMessage(replyToken, {
         type: "text",
@@ -234,7 +234,7 @@ function handleText(message, replyToken, source) {
         }
       })
     default:
-      return client.replyMessage(replyToken, "Thanks for using our services. We will proceed your booking request to concerned dept");
+      return replyText(replyToken, "Thanks for using our services. We will proceed your booking request to concerned dept");
 
   }
 }
