@@ -1,6 +1,6 @@
 
 'use strict';
-``
+
 const line = require('@line/bot-sdk');
 const express = require('express');
 const fs = require('fs');
@@ -15,7 +15,7 @@ const config = {
 };
 
 // base URL for webhook server
-let baseURL = process.env.BASE_URL;
+let baseURL = "www.google.com";
 
 // create LINE SDK client
 const client = new line.Client(config);
@@ -137,7 +137,6 @@ function handleText(message, replyToken, source) {
                     altText: 'Buttons alt text',
                     template: {
                         type: 'buttons',
-                        thumbnailImageUrl: buttonsImageURL,
                         title: 'My button sample',
                         text: 'Hello, my button',
                         actions: [
