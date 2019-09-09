@@ -43,15 +43,75 @@ function handleEvent(event) {
   console.log("event is ", event.type)
   switch (event.type) {
     case 'join':
-      return replyText(event.replyToken, `Joined ${event.source.type}`);
+      return replyText(event.replyToken, {
+        type: 'template',
+        altText: 'Confirm alt text',
+        template: {
+          type: 'confirm',
+          text: 'Hi, I am your hotel booking assisstant.Do you want to book room?',
+          actions: [
+            { label: 'Yes', type: 'message', text: 'Yes!' },
+            { label: 'No', type: 'message', text: 'No!' },
+          ],
+        },
+      });
     // return client.replyMessage(event.replyToken, `Joined ${event.source.type}`);
     // create a echoing replyMessage message
-    default:
-      return replyText(event.replyToken, 'Got followed event');
+    case 'follow':
+      return replyText(event.replyToken, {
+        type: 'template',
+        altText: 'Confirm alt text',
+        template: {
+          type: 'confirm',
+          text: 'Hi, I am your hotel booking assisstant.Do you want to book room?',
+          actions: [
+            { label: 'Yes', type: 'message', text: 'Yes!' },
+            { label: 'No', type: 'message', text: 'No!' },
+          ],
+        },
+      });
     // return client.replyMessage(event.replyToken, 'Got followed event');
-
-    // use reply API
-    // return client.replyMessage(event.source.userId, echo);
+    case 'message':
+      if (event.message.type == 'text') {
+        if (event.message.text == 'Yes') {
+          return client.replyMessage(event.replyToken, {
+            type: "text",
+            text: "Please select type of room",
+            "quickReply": {
+              "items": [
+                {
+                  "type": "action",
+                  "action": {
+                    "type": "message",
+                    "label": "Economy",
+                    "text": "Economy"
+                  }
+                },
+                {
+                  "type": "action",
+                  "action": {
+                    "type": "message",
+                    "label": "Standard",
+                    "text": "Standard"
+                  }
+                },
+                {
+                  "type": "action",
+                  "action": {
+                    "type": "message",
+                    "label": "VIP",
+                    "text": "VIP"
+                  }
+                }
+              ]
+            }
+          })
+        }
+        else if (event.message.text == 'No') {
+          return client.replyMessage(event.source.userId, 'OK, Thanks for your engaging with me bye bye');
+        }
+        // use reply API
+      }
   }
 }
 // listen on port
