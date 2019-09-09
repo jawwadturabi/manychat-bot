@@ -118,6 +118,132 @@ function handleText(message, replyToken, source) {
           ]
         }
       })
+    case 'No!':
+      return client.replyMessage(replyToken, "No problem come again when you planned for booking!");
+    case 'Economy' || 'Standard' || 'VIP':
+      return client.replyMessage(replyToken, {
+        type: "text",
+        text: "Please tell me number of rooms",
+        "quickReply": {
+          "items": [
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "1",
+                "text": "one room"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "2",
+                "text": "2 room"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "message",
+                "label": "3",
+                "text": "3"
+              }
+            }
+          ]
+        }
+      })
+    default:
+      return client.replyMessage(replyToken, "Thanks for using our services. We will proceed your booking request to concerned dept");
+
   }
 }
 // listen on port
