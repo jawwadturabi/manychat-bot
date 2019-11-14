@@ -228,7 +228,7 @@ function handleText(message, replyToken, source) {
               "type": "action",
               "action": {
                 "type": "message",
-                "label": "13",
+                "label": "13th",
                 "text": "Thirteen rooms"
               }
             }
